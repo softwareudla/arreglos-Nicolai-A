@@ -107,8 +107,6 @@ int main(int argc, char *argv[])
                     {
                         float nota;
                         int validar;
-                        printf("Nota para la materia %s: ", materia[j]);
-                        scanf("%f", &notas[i][j]);
                         do
                         {
                             printf("Nota en %s: ", materia[j]);
@@ -121,8 +119,11 @@ int main(int argc, char *argv[])
                                     ;
                             }
                         } while (validar != 1 || nota < 0 || nota > 10);
+
+                        notas[i][j] = nota;
                     }
                 }
+
                 printf("Lista\t\tEstudiante\t\t");
                 for (int j = 0; j < cont1; j++)
                 {
@@ -142,6 +143,7 @@ int main(int argc, char *argv[])
                     printf("\n");
                 }
             }
+            break;
 
             break;
         case 4:
@@ -233,7 +235,7 @@ int main(int argc, char *argv[])
                     printf("%.2f\t\t", PromediosM);
                 }
                 printf("\n");
-                // === ESTADO DE APROBADOS Y REPROBADOS POR MATERIA ===
+                
                 printf("\n=============== ESTADO POR MATERIA ===============\n");
                 for (int j = 0; j < cont1; j++)
                 {
@@ -248,7 +250,7 @@ int main(int argc, char *argv[])
                     }
                 }
 
-                // === NOTAS MÁS ALTAS Y MÁS BAJAS POR MATERIA ===
+                
                 printf("\n=============== NOTAS EXTREMAS POR MATERIA ===============\n");
                 for (int j = 0; j < cont1; j++)
                 {
